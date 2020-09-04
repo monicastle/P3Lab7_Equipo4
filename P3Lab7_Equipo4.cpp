@@ -175,32 +175,25 @@ int main(){
                             y1 = 0;    
                         } // Fin If
                         bool movValido; 
-                        switch (letraPieza){
-                        case "P": {
+                        if (letraPieza == "P"){
                             Peon peon;
                             movValido = peon.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
-                            break; }
-                        case "R": {
+                        } else if (letraPieza == "R"){
                             Torre torre;
                             movValido = torre.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
-                            break; } 
-                        case "N": {
+                        } else if (letraPieza == "N") {
                             Caballo caballo;
                             movValido = caballo.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
-                            break; }
-                        case "B": {
+                        } else if (letraPieza == "B"){
                             Alfil alfil;
                             movValido = alfil.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
-                            break; }
-                        case "Q": {
+                        } else if (letraPieza == "Q"){
                             Reina dama;
                             movValido = dama.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
-                            break; }
-                        case "R": {
+                        } else {
                             Rey rey;
                             movValido = rey.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
-                            break; }     
-                        } // Fin Switch
+                        } // Fin If    
                         if (movValido){
                             tablero = MovimientoValido(tablero, x1, y1, x2, y2, letraPieza);
                         } else {
@@ -325,32 +318,25 @@ int main(){
                             y1 = 7;    
                         } // Fin If
                         bool movValido;
-                        switch (letraPieza){
-                        case "p": {
+                        if (letraPieza == "p"){
                             Peon peon;
                             movValido = peon.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
-                            break; }
-                        case "r": {
+                        } else if (letraPieza == "r"){
                             Torre torre;
                             movValido = torre.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
-                            break; } 
-                        case "n": {
+                        } else if (letraPieza == "n") {
                             Caballo caballo;
                             movValido = caballo.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
-                            break; }
-                        case "b": {
+                        } else if (letraPieza == "b"){
                             Alfil alfil;
                             movValido = alfil.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
-                            break; }
-                        case "q": {
+                        } else if (letraPieza == "q"){
                             Reina dama;
                             movValido = dama.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
-                            break; }
-                        case "r": {
+                        } else {
                             Rey rey;
                             movValido = rey.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
-                            break; }     
-                        } // Fin Switch
+                        } // Fin If   
                         if (movValido){
                             tablero = MovimientoValido(tablero, x1, y1, x2, y2, letraPieza);
                         } else {
