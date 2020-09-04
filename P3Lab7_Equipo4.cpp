@@ -1,6 +1,14 @@
 #include <iostream>
 #include <string>
+#include "Pieza.hpp"
+#include "Torre.hpp"
+#include "Caballo.hpp"
+#include "Reina.hpp"
+#include "Rey.hpp"
+#include "Peon.hpp"
+#include "Alfil.hpp"
 using namespace std;
+int** MovimientoValido(bool, int**, int, int, int, int, string);
 int main(){
     char respuesta = 's';
     while (respuesta == 's'){
@@ -23,8 +31,6 @@ int main(){
             cout << "->Jugador 1: " << nameP1 << endl;
             cout << "->Jugador 2: " << nameP2 << endl;
             cout << endl << "A Jugar!" << endl << endl;
-            //
-            //
             string** tablero = new string*[8];
             for (int i = 0; i < 8; i++){
                 tablero[i] = new string[8];
@@ -88,9 +94,114 @@ int main(){
                             delete[] tablero[i];
                         } // Fin For
                         delete[] tablero;
+                        cout << "*Partida finalizada, " << nameP1 << "abandonó*";
                         continua = false;
                     } else {
-                        //Aqui lo respectivo de polimorfismo
+                        string letraPieza, dondeEstoy, dondeVoy;
+                        int x1, y1, x2, y2;
+                        letraPieza = comando.substr(0,1);
+                        dondeEstoy = comando.substr(2, 2);
+                        dondeVoy = comando.substr(5, 2);
+                        // Posicion en la que está la pieza Y
+                        if (dondeEstoy[0] == 'a'){
+                            y1 = 0;
+                        } else if(dondeEstoy[0] == 'b') {
+                            y1 = 1;
+                        } else if(dondeEstoy[0] == 'c') {
+                            y1 = 2;    
+                        }   else if(dondeEstoy[0] == 'd') {
+                            y1 = 3;    
+                        } else if(dondeEstoy[0] == 'e') {
+                            y1 = 4;    
+                        } else if(dondeEstoy[0] == 'f') {
+                            y1 = 5;    
+                        } else if(dondeEstoy[0] == 'g') {
+                            y1 = 6;    
+                        } else {
+                            y1 = 7;    
+                        } // Fin If       
+                        // Posicion en la que se moverá la pieza Y
+                        if (dondeVoy[0] == 'a'){
+                            y2 = 0;
+                        } else if(dondeVoy[0] == 'b') {
+                            y2 = 1;
+                        } else if(dondeVoy[0] == 'c') {
+                            y2 = 2;    
+                        }   else if(dondeVoy[0] == 'd') {
+                            y2 = 3;    
+                        } else if(dondeVoy[0] == 'e') {
+                            y2 = 4;    
+                        } else if(dondeVoy[0] == 'f') {
+                            y2 = 5;    
+                        } else if(dondeVoy[0] == 'g') {
+                            y2 = 6;    
+                        } else {
+                            y2 = 7;    
+                        } // Fin If  
+                        // Posicion en la que está la pieza X
+                        if (dondeEstoy[1] == '1'){
+                            x1 = 7;
+                        } else if(dondeEstoy[0] == '2') {
+                            x1 = 6;
+                        } else if(dondeEstoy[0] == '3') {
+                            x1 = 5;    
+                        }   else if(dondeEstoy[0] == '4') {
+                            x1 = 4;    
+                        } else if(dondeEstoy[0] == '5') {
+                            x1 = 3;    
+                        } else if(dondeEstoy[0] == '6') {
+                            x1 = 2;    
+                        } else if(dondeEstoy[0] == '7') {
+                            x1 = 1;    
+                        } else {
+                            x1 = 0;    
+                        } // Fin If       
+                        // Posicion en la que se moverá la pieza X
+                        if (dondeVoy[0] == '1'){
+                            x2 = 7;
+                        } else if(dondeVoy[0] == '2') {
+                            x2 = 6;
+                        } else if(dondeVoy[0] == '3') {
+                            x2 = 5;    
+                        }   else if(dondeVoy[0] == '4') {
+                            x2 = 4;    
+                        } else if(dondeVoy[0] == '5') {
+                            x2 = 3;    
+                        } else if(dondeVoy[0] == '6') {
+                            x2 = 2;    
+                        } else if(dondeVoy[0] == '7') {
+                            x2 = 1;    
+                        } else {
+                            y1 = 0;    
+                        } // Fin If
+                        bool movValido; 
+                        switch (letraPieza){
+                        case "P": {
+                            Peon peon;
+                            movValido = peon.validarmovimiento(x1, y1, x2, y2, tablero);
+                            break; }
+                        case "R": {
+                            Torre torre;
+                            movValido = torre.validarmovimiento(x1, y1, x2, y2, tablero);
+                            break; } 
+                        case "N": {
+                            Caballo caballo;
+                            movValido = caballo.validarmovimiento(x1, y1, x2, y2, tablero);
+                            break; }
+                        case "B": {
+                            Alfil alfil;
+                            movValido = alfil.validarmovimiento(x1, y1, x2, y2, tablero);
+                            break; }
+                        case "Q": {
+                            Reina dama;
+                            movValido = dama.validarmovimiento(x1, y1, x2, y2, tablero);
+                            break; }
+                        case "R": {
+                            Rey rey;
+                            movValido = rey.validarmovimiento(x1, y1, x2, y2, tablero);
+                            break; }     
+                        } // Fin Switch
+
                         player = false;
                         comando = "";
                     }  // Fin If
@@ -129,9 +240,113 @@ int main(){
                             delete[] tablero[i];
                         } // Fin For
                         delete[] tablero;
+                        cout << "*Partida finalizada, " << nameP2 << "abandonó*";
                         continua = false;
                     } else {
-                        //Aqui lo respectivo de polimorfismo
+                        string letraPieza, dondeEstoy, dondeVoy;
+                        int x1, y1, x2, y2;
+                        letraPieza = comando.substr(0,1);
+                        dondeEstoy = comando.substr(2, 2);
+                        dondeVoy = comando.substr(5, 2);
+                        // Posicion en la que está la pieza Y
+                        if (dondeEstoy[0] == 'a'){
+                            y1 = 7;
+                        } else if(dondeEstoy[0] == 'b') {
+                            y1 = 6;
+                        } else if(dondeEstoy[0] == 'c') {
+                            y1 = 5;    
+                        }   else if(dondeEstoy[0] == 'd') {
+                            y1 = 4;    
+                        } else if(dondeEstoy[0] == 'e') {
+                            y1 = 3;    
+                        } else if(dondeEstoy[0] == 'f') {
+                            y1 = 2;    
+                        } else if(dondeEstoy[0] == 'g') {
+                            y1 = 1;    
+                        } else {
+                            y1 = 0;    
+                        } // Fin If       
+                        // Posicion en la que se moverá la pieza Y
+                        if (dondeVoy[0] == 'a'){
+                            y2 = 7;
+                        } else if(dondeVoy[0] == 'b') {
+                            y2 = 6;
+                        } else if(dondeVoy[0] == 'c') {
+                            y2 = 5;    
+                        }   else if(dondeVoy[0] == 'd') {
+                            y2 = 4;    
+                        } else if(dondeVoy[0] == 'e') {
+                            y2 = 3;    
+                        } else if(dondeVoy[0] == 'f') {
+                            y2 = 2;    
+                        } else if(dondeVoy[0] == 'g') {
+                            y2 = 1;    
+                        } else {
+                            y2 = 0;    
+                        } // Fin If
+                        // Posicion en la que está la pieza X
+                        if (dondeEstoy[1] == '1'){
+                            x1 = 0;
+                        } else if(dondeEstoy[0] == '2') {
+                            x1 = 1;
+                        } else if(dondeEstoy[0] == '3') {
+                            x1 = 2;    
+                        }   else if(dondeEstoy[0] == '4') {
+                            x1 = 3;    
+                        } else if(dondeEstoy[0] == '5') {
+                            x1 = 4;    
+                        } else if(dondeEstoy[0] == '6') {
+                            x1 = 5;    
+                        } else if(dondeEstoy[0] == '7') {
+                            x1 = 6;    
+                        } else {
+                            x1 = 7;    
+                        } // Fin If       
+                        // Posicion en la que se moverá la pieza X
+                        if (dondeVoy[0] == '1'){
+                            x2 = 0;
+                        } else if(dondeVoy[0] == '2') {
+                            x2 = 1;
+                        } else if(dondeVoy[0] == '3') {
+                            x2 = 2;    
+                        }   else if(dondeVoy[0] == '4') {
+                            x2 = 3;    
+                        } else if(dondeVoy[0] == '5') {
+                            x2 = 4;    
+                        } else if(dondeVoy[0] == '6') {
+                            x2 = 5;    
+                        } else if(dondeVoy[0] == '7') {
+                            x2 = 6;    
+                        } else {
+                            y1 = 7;    
+                        } // Fin If
+                        bool movValido;
+                        switch (letraPieza){
+                        case "P": {
+                            Peon peon;
+                            movValido = peon.validarmovimiento(x1, y1, x2, y2, tablero);
+                            break; }
+                        case "R": {
+                            Torre torre;
+                            movValido = torre.validarmovimiento(x1, y1, x2, y2, tablero);
+                            break; } 
+                        case "N": {
+                            Caballo caballo;
+                            movValido = caballo.validarmovimiento(x1, y1, x2, y2, tablero);
+                            break; }
+                        case "B": {
+                            Alfil alfil;
+                            movValido = alfil.validarmovimiento(x1, y1, x2, y2, tablero);
+                            break; }
+                        case "Q": {
+                            Reina dama;
+                            movValido = dama.validarmovimiento(x1, y1, x2, y2, tablero);
+                            break; }
+                        case "R": {
+                            Rey rey;
+                            movValido = rey.validarmovimiento(x1, y1, x2, y2, tablero);
+                            break; }     
+                        } // Fin Switch                         
                         player = true;    
                         comando = "";
                     } // Fin If 
@@ -146,3 +361,10 @@ int main(){
         } // Fin Switch
     } // Fin While Respuesta 
 } // Fin Main
+int** MovimientoValido(bool valid, int** tablero, int x1, int y1, int x2, int y2, string pieza){
+    if (valid){
+        
+    } else {
+
+    }
+}
