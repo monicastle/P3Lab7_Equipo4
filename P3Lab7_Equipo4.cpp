@@ -8,7 +8,7 @@
 #include "Peon.hpp"
 #include "Alfil.hpp"
 using namespace std;
-int** MovimientoValido(int**, int, int, int, int, string);
+string** MovimientoValido(string**, int, int, int, int, string);
 int main(){
     char respuesta = 's';
     while (respuesta == 's'){
@@ -356,7 +356,7 @@ int main(){
         } // Fin Switch
     } // Fin While Respuesta 
 } // Fin Main
-int** MovimientoValido(int** tablero, int x1, int y1, int x2, int y2, string pieza){
+string** MovimientoValido(string** tablero, int x1, int y1, int x2, int y2, string pieza){
     tablero[x1][y1] = "";
     tablero[x2][y2] = pieza;  
     return tablero;
