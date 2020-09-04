@@ -78,6 +78,7 @@ int main(){
                         } // Fin For
                         cout << endl;
                     } // Fin For
+                    cout << "     [a] [b] [c] [d] [e] [f] [g] [h]" << endl;
                     cout << "                 " << nameP1 << endl;
                     cout << "->Ingrese: ";
                     cin >> comando;
@@ -118,6 +119,7 @@ int main(){
                         } // Fin For
                         cout << endl;
                     } // Fin For
+                    cout << "     [h] [g] [f] [e] [d] [c] [b] [a]" << endl;
                     cout << "              " << nameP2 << endl;
                     cout << "->Ingrese: ";
                     cin >> comando;
