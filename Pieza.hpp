@@ -1,7 +1,9 @@
 #ifndef PIEZA_H
 #define PIEZA_H
+#include <string>
+using namespace std;
 class Pieza{
     public:
-    virtual bool validarmovimiento(int x,int y,int x2,int y2,char[][] tablero)=0;
+    virtual bool validarmovimiento(string pieza,int x,int y,int x2,int y2,string** tablero)=0;
 };
 #endif
