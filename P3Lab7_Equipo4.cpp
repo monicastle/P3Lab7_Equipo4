@@ -105,103 +105,103 @@ int main(){
                         dondeVoy = comando.substr(5, 2);
                         cout << "Donde Estoy: " << dondeEstoy << endl;
                         cout << "Donde Voy: " << dondeVoy << endl;
-                        // Posicion en la que está la pieza X
-                        if (dondeEstoy[0] == 'a'){
-                            x1 = 0;
-                        } else if(dondeEstoy[0] == 'b') {
-                            x1 = 1;
-                        } else if(dondeEstoy[0] == 'c') {
-                            x1 = 2;    
-                        }   else if(dondeEstoy[0] == 'd') {
-                            x1 = 3;    
-                        } else if(dondeEstoy[0] == 'e') {
-                            x1 = 4;    
-                        } else if(dondeEstoy[0] == 'f') {
-                            x1 = 5;    
-                        } else if(dondeEstoy[0] == 'g') {
-                            x1 = 6;    
-                        } else {
-                            x1 = 7;    
-                        } // Fin If       
-                        // Posicion en la que se moverá la pieza X
-                        if (dondeVoy[0] == 'a'){
-                            x2 = 0;
-                        } else if(dondeVoy[0] == 'b') {
-                            x2 = 1;
-                        } else if(dondeVoy[0] == 'c') {
-                            x2 = 2;    
-                        }   else if(dondeVoy[0] == 'd') {
-                            x2 = 3;    
-                        } else if(dondeVoy[0] == 'e') {
-                            x2 = 4;    
-                        } else if(dondeVoy[0] == 'f') {
-                            x2 = 5;    
-                        } else if(dondeVoy[0] == 'g') {
-                            x2 = 6;    
-                        } else {
-                            x2 = 7;    
-                        } // Fin If  
                         // Posicion en la que está la pieza Y
-                        if (dondeEstoy[1] == '1'){
-                            y1 = 7;
-                        } else if(dondeEstoy[1] == '2') {
-                            y1 = 6;
-                        } else if(dondeEstoy[1] == '3') {
-                            y1 = 5;    
-                        }   else if(dondeEstoy[1] == '4') {
-                            y1 = 4;    
-                        } else if(dondeEstoy[1] == '5') {
-                            y1 = 3;    
-                        } else if(dondeEstoy[1] == '6') {
+                        if (dondeEstoy[0] == 'a'){
+                            y1 = 0;
+                        } else if(dondeEstoy[0] == 'b') {
+                            y1 = 1;
+                        } else if(dondeEstoy[0] == 'c') {
                             y1 = 2;    
-                        } else if(dondeEstoy[1] == '7') {
-                            y1 = 1;    
+                        }   else if(dondeEstoy[0] == 'd') {
+                            y1 = 3;    
+                        } else if(dondeEstoy[0] == 'e') {
+                            y1 = 4;    
+                        } else if(dondeEstoy[0] == 'f') {
+                            y1 = 5;    
+                        } else if(dondeEstoy[0] == 'g') {
+                            y1 = 6;    
                         } else {
-                            y1 = 0;    
+                            y1 = 7;    
                         } // Fin If       
                         // Posicion en la que se moverá la pieza Y
-                        if (dondeVoy[1] == '1'){
-                            y2 = 7;
-                        } else if(dondeVoy[1] == '2') {
-                            y2 = 6;
-                        } else if(dondeVoy[1] == '3') {
-                            y2 = 5;    
-                        }   else if(dondeVoy[1] == '4') {
-                            y2 = 4;    
-                        } else if(dondeVoy[1] == '5') {
-                            y2 = 3;    
-                        } else if(dondeVoy[1] == '6') {
+                        if (dondeVoy[0] == 'a'){
+                            y2 = 0;
+                        } else if(dondeVoy[0] == 'b') {
+                            y2 = 1;
+                        } else if(dondeVoy[0] == 'c') {
                             y2 = 2;    
-                        } else if(dondeVoy[1] == '7') {
-                            y2 = 1;    
+                        }   else if(dondeVoy[0] == 'd') {
+                            y2 = 3;    
+                        } else if(dondeVoy[0] == 'e') {
+                            y2 = 4;    
+                        } else if(dondeVoy[0] == 'f') {
+                            y2 = 5;    
+                        } else if(dondeVoy[0] == 'g') {
+                            y2 = 6;    
                         } else {
-                            y1 = 0;    
+                            y2 = 7;    
+                        } // Fin If  
+                        // Posicion en la que está la pieza X
+                        if (dondeEstoy[1] == '1'){
+                            x1 = 7;
+                        } else if(dondeEstoy[1] == '2') {
+                            x1 = 6;
+                        } else if(dondeEstoy[1] == '3') {
+                            x1 = 5;    
+                        }   else if(dondeEstoy[1] == '4') {
+                            x1 = 4;    
+                        } else if(dondeEstoy[1] == '5') {
+                            x1 = 3;    
+                        } else if(dondeEstoy[1] == '6') {
+                            x1 = 2;    
+                        } else if(dondeEstoy[1] == '7') {
+                            x1 = 1;    
+                        } else {
+                            x1 = 0;    
+                        } // Fin If       
+                        // Posicion en la que se moverá la pieza X
+                        if (dondeVoy[1] == '1'){
+                            x2 = 7;
+                        } else if(dondeVoy[1] == '2') {
+                            x2 = 6;
+                        } else if(dondeVoy[1] == '3') {
+                            x2 = 5;    
+                        }   else if(dondeVoy[1] == '4') {
+                            x2 = 4;    
+                        } else if(dondeVoy[1] == '5') {
+                            x2 = 3;    
+                        } else if(dondeVoy[1] == '6') {
+                            x2 = 2;    
+                        } else if(dondeVoy[1] == '7') {
+                            x2 = 1;    
+                        } else {
+                            x2 = 0;    
                         } // Fin If
                         cout << "x1: " << x1 << " y1: " << y1 << " x2: " << x2 << " y2: " << y2 << endl;
                         bool movValido; 
                         if (letraPieza == "P"){
                             Peon peon;
-                            movValido = peon.validarmovimiento(letraPieza, y1, x1, y2, x2, tablero);
+                            movValido = peon.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                         } else if (letraPieza == "R"){
                             Torre torre;
-                            movValido = torre.validarmovimiento(letraPieza, y1, x1, y2, x2, tablero);
+                            movValido = torre.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                         } else if (letraPieza == "N") {
                             Caballo caballo;
-                            movValido = caballo.validarmovimiento(letraPieza, y1, x1, y2, x2, tablero);
+                            movValido = caballo.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                         } else if (letraPieza == "B"){
                             Alfil alfil;
-                            movValido = alfil.validarmovimiento(letraPieza, y1, x1, y2, x2, tablero);
+                            movValido = alfil.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                         } else if (letraPieza == "Q"){
                             Reina dama;
-                            movValido = dama.validarmovimiento(letraPieza, y1, x1, y2, x2, tablero);
+                            movValido = dama.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                         } else {
                             Rey rey;
-                            movValido = rey.validarmovimiento(letraPieza, y1, x1, y2, x2, tablero);
+                            movValido = rey.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                         } // Fin If    
                         if (movValido){
-                            tablero = MovimientoValido(tablero, y1, x1, y2, x2, letraPieza);
+                            tablero = MovimientoValido(tablero, x1, y1, x2, y2, letraPieza);
                         } else {
-                            cout << "El movimiento no es valido!";
+                            cout << "El movimiento no es valido!" << endl;
                         } // Fin If
                         player = false;
                         comando = "";
@@ -241,7 +241,7 @@ int main(){
                             delete[] tablero[i];
                         } // Fin For
                         delete[] tablero;
-                        cout << "*Partida finalizada, " << nameP2 << "vabandono*" << endl;
+                        cout << "*Partida finalizada, " << nameP2 << " abandono*" << endl;
                         continua = false;
                     } else {
                         string letraPieza, dondeEstoy, dondeVoy;
@@ -319,31 +319,31 @@ int main(){
                         } else if(dondeVoy[1] == '7') {
                             x2 = 6;    
                         } else {
-                            y1 = 7;    
+                            x2 = 7;    
                         } // Fin If
                         cout << "x1: " << x1 << " y1: " << y1 << " x2: " << x2 << " y2: " << y2;
                         bool movValido;                        
                         if (letraPieza == "p"){
                             Peon peon;
-                            movValido = peon.validarmovimiento(letraPieza, y1, x1, y2, x2, tablero);
+                            movValido = peon.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                         } else if (letraPieza == "r"){
                             Torre torre;
-                            movValido = torre.validarmovimiento(letraPieza, y1, x1, y2, x2, tablero);
+                            movValido = torre.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                         } else if (letraPieza == "n") {
                             Caballo caballo;
-                            movValido = caballo.validarmovimiento(letraPieza, y1, x1, y2, x2, tablero);
+                            movValido = caballo.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                         } else if (letraPieza == "b"){
                             Alfil alfil;
-                            movValido = alfil.validarmovimiento(letraPieza, y1, x1, y2, x2, tablero);
+                            movValido = alfil.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                         } else if (letraPieza == "q"){
                             Reina dama;
-                            movValido = dama.validarmovimiento(letraPieza, y1, x1, y2, x2, tablero);
+                            movValido = dama.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                         } else {
                             Rey rey;
-                            movValido = rey.validarmovimiento(letraPieza, y1, x1, y2, x2, tablero);
+                            movValido = rey.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                         } // Fin If   
                         if (movValido){
-                            tablero = MovimientoValido(tablero, y1, x1, y2, x2, letraPieza);
+                            tablero = MovimientoValido(tablero, x1, y1, x2, y2, letraPieza);
                         } else {
                             cout << "El movimiento no es valido!" << endl;
                         } // Fin If                       
@@ -361,8 +361,8 @@ int main(){
         } // Fin Switch
     } // Fin While Respuesta 
 } // Fin Main
-string** MovimientoValido(string** tablero, int y1, int x1, int y2, int x2, string pieza){
-    tablero[y1][x1] = "";
-    tablero[y2][x2] = pieza;  
+string** MovimientoValido(string** tablero, int x1, int y1, int x2, int y2, string pieza){
+    tablero[x1][y1] = "";
+    tablero[x2][y2] = pieza;  
     return tablero;
-}
+} // Fin Movimiento Valido
