@@ -8,7 +8,7 @@
 #include "Peon.hpp"
 #include "Alfil.hpp"
 using namespace std;
-int** MovimientoValido(bool, int**, int, int, int, int, string);
+int** MovimientoValido(int**, int, int, int, int, string);
 int main(){
     char respuesta = 's';
     while (respuesta == 's'){
@@ -178,30 +178,34 @@ int main(){
                         switch (letraPieza){
                         case "P": {
                             Peon peon;
-                            movValido = peon.validarmovimiento(x1, y1, x2, y2, tablero);
+                            movValido = peon.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                             break; }
                         case "R": {
                             Torre torre;
-                            movValido = torre.validarmovimiento(x1, y1, x2, y2, tablero);
+                            movValido = torre.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                             break; } 
                         case "N": {
                             Caballo caballo;
-                            movValido = caballo.validarmovimiento(x1, y1, x2, y2, tablero);
+                            movValido = caballo.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                             break; }
                         case "B": {
                             Alfil alfil;
-                            movValido = alfil.validarmovimiento(x1, y1, x2, y2, tablero);
+                            movValido = alfil.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                             break; }
                         case "Q": {
                             Reina dama;
-                            movValido = dama.validarmovimiento(x1, y1, x2, y2, tablero);
+                            movValido = dama.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                             break; }
                         case "R": {
                             Rey rey;
-                            movValido = rey.validarmovimiento(x1, y1, x2, y2, tablero);
+                            movValido = rey.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                             break; }     
                         } // Fin Switch
-
+                        if (movValido){
+                            tablero = MovimientoValido(tablero, x1, y1, x2, y2, letraPieza);
+                        } else {
+                            cout << "El movimiento no es valido!";
+                        } // Fin If
                         player = false;
                         comando = "";
                     }  // Fin If
@@ -322,31 +326,36 @@ int main(){
                         } // Fin If
                         bool movValido;
                         switch (letraPieza){
-                        case "P": {
+                        case "p": {
                             Peon peon;
-                            movValido = peon.validarmovimiento(x1, y1, x2, y2, tablero);
+                            movValido = peon.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                             break; }
-                        case "R": {
+                        case "r": {
                             Torre torre;
-                            movValido = torre.validarmovimiento(x1, y1, x2, y2, tablero);
+                            movValido = torre.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                             break; } 
-                        case "N": {
+                        case "n": {
                             Caballo caballo;
-                            movValido = caballo.validarmovimiento(x1, y1, x2, y2, tablero);
+                            movValido = caballo.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                             break; }
-                        case "B": {
+                        case "b": {
                             Alfil alfil;
-                            movValido = alfil.validarmovimiento(x1, y1, x2, y2, tablero);
+                            movValido = alfil.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                             break; }
-                        case "Q": {
+                        case "q": {
                             Reina dama;
-                            movValido = dama.validarmovimiento(x1, y1, x2, y2, tablero);
+                            movValido = dama.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                             break; }
-                        case "R": {
+                        case "r": {
                             Rey rey;
-                            movValido = rey.validarmovimiento(x1, y1, x2, y2, tablero);
+                            movValido = rey.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                             break; }     
-                        } // Fin Switch                         
+                        } // Fin Switch
+                        if (movValido){
+                            tablero = MovimientoValido(tablero, x1, y1, x2, y2, letraPieza);
+                        } else {
+                            cout << "El movimiento no es valido!";
+                        } // Fin If                       
                         player = true;    
                         comando = "";
                     } // Fin If 
@@ -361,10 +370,8 @@ int main(){
         } // Fin Switch
     } // Fin While Respuesta 
 } // Fin Main
-int** MovimientoValido(bool valid, int** tablero, int x1, int y1, int x2, int y2, string pieza){
-    if (valid){
-        
-    } else {
-
-    }
+int** MovimientoValido(int** tablero, int x1, int y1, int x2, int y2, string pieza){
+    tablero[x1][y1] = "";
+    tablero[x2][y2] = pieza;  
+    return tablero;
 }
