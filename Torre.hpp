@@ -21,7 +21,7 @@ class Torre : public Pieza{
                     if (difY > 0){
                         // Movimiento hacía la derecha
                         for (int i = 0; i < difY - 1; i++){
-                            if (tablero[x1][y1++] != ""){
+                            if (tablero[x1][y1 + 1] != " "){
                                 return false;
                             } // Fin If                    
                         } // Fin For
@@ -30,7 +30,7 @@ class Torre : public Pieza{
                         // Movimiento hacía izquierda
                         difY = difY * -1;
                         for (int i = 0; i < difY - 1; i++){
-                            if (tablero[x1][y1--] != ""){
+                            if (tablero[x1][y1 - 1] != " "){
                                 return false;
                             } // Fin If                    
                         } // Fin For
@@ -42,7 +42,7 @@ class Torre : public Pieza{
                         // Movimiento hacía arriba
                         difX = difX * -1;
                         for (int i = 0; i < difX - 1; i++){
-                            if (tablero[x1--][y1] != ""){
+                            if (tablero[x1 - 1][y1] != " "){
                                 return false;
                             } // Fin If                    
                         } // Fin For  
@@ -50,20 +50,20 @@ class Torre : public Pieza{
                     } else {
                         // Movimiento hacía abajo
                         for (int i = 0; i < difX - 1; i++){
-                            if (tablero[x1++][y1] != ""){
+                            if (tablero[x1 + 1][y1] != " "){
                                 return false;
                             } // Fin If                    
                         } // Fin For  
                         return true; 
                     } // Fin If
                 } // Fin If
-            } else if (tablero[x2][y2] == ""){
+            } else if (tablero[x2][y2] == " "){
                 if (x1 == x2){
                     // Moverme entre columnas
                     if (difY > 0){
                         // Movimiento hacía la derecha
                         for (int i = 0; i < difY - 1; i++){
-                            if (tablero[x1][y1++] != ""){
+                            if (tablero[x1][y1 + 1] != " "){
                                 return false;
                             } // Fin If                    
                         } // Fin For
@@ -72,7 +72,7 @@ class Torre : public Pieza{
                         // Movimiento hacía izquierda
                         difY = difY * -1;
                         for (int i = 0; i < difY - 1; i++){
-                            if (tablero[x1][y1--] != ""){
+                            if (tablero[x1][y1 - 1] != " "){
                                 return false;
                             } // Fin If                    
                         } // Fin For
@@ -84,7 +84,7 @@ class Torre : public Pieza{
                         // Movimiento hacía arriba
                         difX = difX * -1;
                         for (int i = 0; i < difX - 1; i++){
-                            if (tablero[x1--][y1] != ""){
+                            if (tablero[x1 - 1][y1] != " "){
                                 return false;
                             } // Fin If                    
                         } // Fin For  
@@ -92,7 +92,7 @@ class Torre : public Pieza{
                     } else {
                         // Movimiento hacía abajo
                         for (int i = 0; i < difX - 1; i++){
-                            if (tablero[x1++][y1] != ""){
+                            if (tablero[x1 + 1][y1] != " "){
                                 return false;
                             } // Fin If                    
                         } // Fin For  
@@ -117,7 +117,7 @@ class Torre : public Pieza{
                         if (difY > 0){
                         // Movimiento hacía la derecha
                         for (int i = 0; i < difY - 1; i++){
-                            if (tablero[x1][y1++] != ""){
+                            if (tablero[x1][y1 + 1] != " "){
                                 return false;
                             } // Fin If                    
                         } // Fin For
@@ -126,7 +126,7 @@ class Torre : public Pieza{
                         // Movimiento hacía izquierda
                         difY = difY * -1;
                         for (int i = 0; i < difY - 1; i++){
-                            if (tablero[x1][y1--] != ""){
+                            if (tablero[x1][y1 - 1] != " "){
                                 return false;
                             } // Fin If                    
                         } // Fin For
@@ -138,7 +138,7 @@ class Torre : public Pieza{
                         // Movimiento hacía arriba
                         difX = difX * -1;
                         for (int i = 0; i < difX - 1; i++){
-                            if (tablero[x1--][y1] != ""){
+                            if (tablero[x1 - 1][y1] != " "){
                                 return false;
                             } // Fin If                    
                         } // Fin For  
@@ -146,20 +146,20 @@ class Torre : public Pieza{
                     } else {
                         // Movimiento hacía abajo
                         for (int i = 0; i < difX - 1; i++){
-                            if (tablero[x1++][y1] != ""){
+                            if (tablero[x1 + 1][y1] != " "){
                                 return false;
                             } // Fin If                    
                         } // Fin For  
                         return true; 
                     } // Fin If
                 } // Fin If
-            } else if (tablero[x2][y2] == ""){
+            } else if (tablero[x2][y2] == " "){
                 if (x1 == x2){
                     // Moverme entre columnas
                     if (difY > 0){
                         // Movimiento hacía la derecha
                         for (int i = 0; i < difY - 1; i++){
-                            if (tablero[x1][y1++] != ""){
+                            if (tablero[x1][y1 + 1] != " "){
                                 return false;
                             } // Fin If                    
                         } // Fin For
@@ -168,7 +168,7 @@ class Torre : public Pieza{
                         // Movimiento hacía izquierda
                         difY = difY * -1;
                         for (int i = 0; i < difY - 1; i++){
-                            if (tablero[x1][y1--] != ""){
+                            if (tablero[x1][y1 - 1] != " "){
                                 return false;
                             } // Fin If                    
                         } // Fin For
@@ -180,7 +180,7 @@ class Torre : public Pieza{
                         // Movimiento hacía arriba
                         difX = difX * -1;
                         for (int i = 0; i < difX - 1; i++){
-                            if (tablero[x1--][y1] != ""){
+                            if (tablero[x1 - 1][y1] != " "){
                                 return false;
                             } // Fin If                    
                         } // Fin For  
@@ -188,7 +188,7 @@ class Torre : public Pieza{
                     } else {
                         // Movimiento hacía abajo
                         for (int i = 0; i < difX - 1; i++){
-                            if (tablero[x1++][y1] != ""){
+                            if (tablero[x1 + 1][y1] != " "){
                                 return false;
                             } // Fin If                    
                         } // Fin For  
@@ -197,7 +197,7 @@ class Torre : public Pieza{
                 } // Fin If
             } // Fin If
         } // Fin If
-        return true;
+        return false;
     } // Fin Validar Movimiento
 }; // Fin Class Torre
 #endif
