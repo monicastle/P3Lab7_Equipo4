@@ -17,8 +17,8 @@ class Torre : public Pieza{
                 return false;
             } else if (tablero[x2][y2] == "p" || tablero[x2][y2] == "n" || tablero[x2][y2] == "b" || tablero[x2][y2] == "r" || tablero[x2][y2] == "q" || tablero[x2][y2] == "k"){
                 if (x1 == x2){
-                    // Moverme entre filas
-                    if (difY < 0){
+                    // Moverme entre Columnas
+                    if (difY > 0){
                         // Movimiento hacía la derecha
                         for (int i = 0; i < difY - 1; i++){
                             if (tablero[x1][y1++] != ""){
@@ -37,7 +37,7 @@ class Torre : public Pieza{
                         return true;
                     } // Fin If
                 } else {
-                    // Moverme entre columnas
+                    // Moverme entre Filas
                     if (difX < 0){
                         // Movimiento hacía arriba
                         difX = difX * -1;
@@ -57,10 +57,10 @@ class Torre : public Pieza{
                         return true; 
                     } // Fin If
                 } // Fin If
-            } else if (tablero[x2][y2] == " "){
+            } else if (tablero[x2][y2] == ""){
                 if (x1 == x2){
-                    // Moverme entre filas
-                    if (difY < 0){
+                    // Moverme entre columnas
+                    if (difY > 0){
                         // Movimiento hacía la derecha
                         for (int i = 0; i < difY - 1; i++){
                             if (tablero[x1][y1++] != ""){
@@ -79,7 +79,7 @@ class Torre : public Pieza{
                         return true;
                     } // Fin If
                 } else {
-                    // Moverme entre columnas
+                    // Moverme entre filas
                     if (difX < 0){
                         // Movimiento hacía arriba
                         difX = difX * -1;
@@ -113,8 +113,8 @@ class Torre : public Pieza{
                 return false;
             } else if (tablero[x2][y2] == "P" || tablero[x2][y2] == "N" || tablero[x2][y2] == "B" || tablero[x2][y2] == "R" || tablero[x2][y2] == "Q" || tablero[x2][y2] == "K"){
                 if (x1 == x2){
-                    // Moverme entre filas
-                    if (difY < 0){
+                    // Moverme entre columnas
+                        if (difY > 0){
                         // Movimiento hacía la derecha
                         for (int i = 0; i < difY - 1; i++){
                             if (tablero[x1][y1++] != ""){
@@ -133,7 +133,7 @@ class Torre : public Pieza{
                         return true;
                     } // Fin If
                 } else {
-                    // Moverme entre columnas
+                    // Moverme entre filas
                     if (difX < 0){
                         // Movimiento hacía arriba
                         difX = difX * -1;
@@ -153,10 +153,10 @@ class Torre : public Pieza{
                         return true; 
                     } // Fin If
                 } // Fin If
-            } else if (tablero[x2][y2] == " "){
+            } else if (tablero[x2][y2] == ""){
                 if (x1 == x2){
-                    // Moverme entre filas
-                    if (difY < 0){
+                    // Moverme entre columnas
+                    if (difY > 0){
                         // Movimiento hacía la derecha
                         for (int i = 0; i < difY - 1; i++){
                             if (tablero[x1][y1++] != ""){
@@ -175,7 +175,7 @@ class Torre : public Pieza{
                         return true;
                     } // Fin If
                 } else {
-                    // Moverme entre columnas
+                    // Moverme entre filas
                     if (difX < 0){
                         // Movimiento hacía arriba
                         difX = difX * -1;
@@ -197,6 +197,7 @@ class Torre : public Pieza{
                 } // Fin If
             } // Fin If
         } // Fin If
+        return true;
     } // Fin Validar Movimiento
 }; // Fin Class Torre
 #endif
