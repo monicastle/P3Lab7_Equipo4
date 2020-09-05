@@ -251,75 +251,75 @@ int main(){
                         dondeVoy = comando.substr(5, 2);
                         // Posicion en la que está la pieza Y
                         if (dondeEstoy[0] == 'a'){
-                            y1 = 7;
+                            y1 = 0;
                         } else if(dondeEstoy[0] == 'b') {
-                            y1 = 6;
+                            y1 = 1;
                         } else if(dondeEstoy[0] == 'c') {
-                            y1 = 5;    
-                        }   else if(dondeEstoy[0] == 'd') {
-                            y1 = 4;    
-                        } else if(dondeEstoy[0] == 'e') {
-                            y1 = 3;    
-                        } else if(dondeEstoy[0] == 'f') {
                             y1 = 2;    
+                        }   else if(dondeEstoy[0] == 'd') {
+                            y1 = 3;    
+                        } else if(dondeEstoy[0] == 'e') {
+                            y1 = 4;    
+                        } else if(dondeEstoy[0] == 'f') {
+                            y1 = 5;    
                         } else if(dondeEstoy[0] == 'g') {
-                            y1 = 1;    
+                            y1 = 6;    
                         } else {
-                            y1 = 0;    
+                            y1 = 7;    
                         } // Fin If       
                         // Posicion en la que se moverá la pieza Y
                         if (dondeVoy[0] == 'a'){
-                            y2 = 7;
+                            y2 = 0;
                         } else if(dondeVoy[0] == 'b') {
-                            y2 = 6;
+                            y2 = 1;
                         } else if(dondeVoy[0] == 'c') {
-                            y2 = 5;    
-                        }   else if(dondeVoy[0] == 'd') {
-                            y2 = 4;    
-                        } else if(dondeVoy[0] == 'e') {
-                            y2 = 3;    
-                        } else if(dondeVoy[0] == 'f') {
                             y2 = 2;    
+                        }   else if(dondeVoy[0] == 'd') {
+                            y2 = 3;    
+                        } else if(dondeVoy[0] == 'e') {
+                            y2 = 4;    
+                        } else if(dondeVoy[0] == 'f') {
+                            y2 = 5;    
                         } else if(dondeVoy[0] == 'g') {
-                            y2 = 1;    
+                            y2 = 6;    
                         } else {
-                            y2 = 0;    
+                            y2 = 7;    
                         } // Fin If
                         // Posicion en la que está la pieza X
                         if (dondeEstoy[1] == '1'){
-                            x1 = 0;
+                            x1 = 7;
                         } else if(dondeEstoy[1] == '2') {
-                            x1 = 1;
+                            x1 = 6;
                         } else if(dondeEstoy[1] == '3') {
-                            x1 = 2;    
-                        }   else if(dondeEstoy[1] == '4') {
-                            x1 = 3;    
-                        } else if(dondeEstoy[1] == '5') {
-                            x1 = 4;    
-                        } else if(dondeEstoy[1] == '6') {
                             x1 = 5;    
+                        }   else if(dondeEstoy[1] == '4') {
+                            x1 = 4;    
+                        } else if(dondeEstoy[1] == '5') {
+                            x1 = 3;    
+                        } else if(dondeEstoy[1] == '6') {
+                            x1 = 2;    
                         } else if(dondeEstoy[1] == '7') {
-                            x1 = 6;    
+                            x1 = 1;    
                         } else {
-                            x1 = 7;    
+                            x1 = 0;    
                         } // Fin If       
                         // Posicion en la que se moverá la pieza X
                         if (dondeVoy[1] == '1'){
-                            x2 = 0;
+                            x2 = 7;
                         } else if(dondeVoy[1] == '2') {
-                            x2 = 1;
+                            x2 = 6;
                         } else if(dondeVoy[1] == '3') {
-                            x2 = 2;    
-                        }   else if(dondeVoy[1] == '4') {
-                            x2 = 3;    
-                        } else if(dondeVoy[1] == '5') {
-                            x2 = 4;    
-                        } else if(dondeVoy[1] == '6') {
                             x2 = 5;    
+                        }   else if(dondeVoy[1] == '4') {
+                            x2 = 4;    
+                        } else if(dondeVoy[1] == '5') {
+                            x2 = 3;    
+                        } else if(dondeVoy[1] == '6') {
+                            x2 = 2;    
                         } else if(dondeVoy[1] == '7') {
-                            x2 = 6;    
+                            x2 = 1;    
                         } else {
-                            x2 = 7;    
+                            x2 = 0;    
                         } // Fin If
                         cout << "x1: " << x1 << " y1: " << y1 << " x2: " << x2 << " y2: " << y2;
                         bool movValido;                        
