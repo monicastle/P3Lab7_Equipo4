@@ -198,7 +198,7 @@ int main(){
                             Rey rey;
                             movValido = rey.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                         } // Fin If    
-                        if (movValido){
+                        if (movValido==true){
                             tablero = MovimientoValido(tablero, x1, y1, x2, y2, letraPieza);
                         } else {
                             cout << "El movimiento no es valido!" << endl;
@@ -342,7 +342,7 @@ int main(){
                             Rey rey;
                             movValido = rey.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
                         } // Fin If   
-                        if (movValido){
+                        if (movValido==true){
                             tablero = MovimientoValido(tablero, x1, y1, x2, y2, letraPieza);
                         } else {
                             cout << "El movimiento no es valido!" << endl;

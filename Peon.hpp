@@ -3,61 +3,124 @@
 #define PEON_H
 class Peon : public Pieza
 {
-    public:
-    virtual bool validarmovimiento(string pieza, int x, int y, int x2, int y2, string **tablero){
-            if (tablero[x][y - 1] == "P" || tablero[x][y - 1] == "R" || tablero[x][y - 1] == "B" || tablero[x][y - 1] == "N" || tablero[x][y - 1] == "Q" || tablero[x][y - 1] == "K" || tablero[x][y - 1] == "p" || tablero[x][y - 1] == "r" || tablero[x][y - 1] == "b" || tablero[x][y - 1] == "n" || tablero[x][y - 1] == "q" || tablero[x][y - 1] == "k"){
+public:
+    bool validarmovimiento(string pieza, int x, int y, int x2, int y2, string **tablero) const
+    {
+        bool valido = true;
+        if (pieza == "P")
+        {
+            if (tablero[x - 1][y] == "P" || tablero[x - 1][y] == "R" || tablero[x - 1][y] == "B" || tablero[x - 1][y] == "N" || tablero[x - 1][y] == "Q" || tablero[x - 1][y] == "K" || tablero[x - 1][y] == "p" || tablero[x - 1][y] == "r" || tablero[x - 1][y] == "b" || tablero[x - 1][y] == "n" || tablero[x - 1][y] == "q" || tablero[x - 1][y] == "k")
+            {
                 return false;
             }
-            else if (tablero[x][y - 2] == "P" || tablero[x][y - 2] == "R" || tablero[x][y - 2] == "B" || tablero[x][y - 2] == "N" || tablero[x][y - 2] == "Q" || tablero[x][y - 2] == "K" || tablero[x][y - 2] == "p" || tablero[x][y - 2] == "r" || tablero[x][y - 2] == "b" || tablero[x][y - 2] == "n" || tablero[x][y - 2] == "q" || tablero[x][y - 2] == "k")
-            {
-                if (x != x2)
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-            }
-            else if (tablero[x][y - 2] == " " || tablero[x][y - 2] == " " || tablero[x][y - 2] == " " || tablero[x][y - 2] == " " || tablero[x][y - 2] == " " || tablero[x][y - 2] == " " || tablero[x][y - 2] == " " || tablero[x][y - 2] == " " || tablero[x][y - 2] == " " || tablero[x][y - 2] == " " || tablero[x][y - 2] == " " || tablero[x][y - 2] == " ")
-            {
-                if (x != x2)
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-            }
-            else if (x != x2)
-            {
-                if (tablero[x + 1][y - 1] == "p" || tablero[x + 1][y - 1] == "r" || tablero[x + 1][y - 1] == "b" || tablero[x + 1][y - 1] == "n" || tablero[x + 1][y - 1] == "q" || tablero[x + 1][y - 1] == "k")
-                {
-                    if (tablero[x + 2][y - 2] == " " || tablero[x + 2][y - 2] == " " || tablero[x + 2][y - 2] == " " || tablero[x + 2][y - 2] == " " || tablero[x + 2][y - 2] == " " || tablero[x + 2][y - 2] == " ")
-                    {
-                        if ((x2 == x + 2) && (y2 == y - 2))
-                        {
-                            return true;
-                        }
-                    }
-                }
-                else if (tablero[x -1][y + 1] == "p" || tablero[x - 1][y + 1] == "r" || tablero[x - 1][y + 1] == "b" || tablero[x - 1][y +1] == "n" || tablero[x - 1][y + 1] == "q" || tablero[x - 1][y + 1] == "k")
-                {
-                    if (tablero[x - 2][y + 2] == " " || tablero[x - 2][y + 2] == " " || tablero[x - 2][y + 2] == " " || tablero[x - 2][y + 2] == " " || tablero[x - 2][y + 2] == " " || tablero[x - 2][y + 2] == " ")
-                    {
-                        if ((x2 == x - 2) && (y2 == y + 2))
-                        {
-                            return true;
-                        }
-                    }
-                }
-                else if (((x2 == x - 2) && (y2 == y + 2)) && ((x2 == x + 2) && (y2 == y - 2)))
-                {
-                    return false;
-                }
-            }
-        }
 
+            else if (tablero[x - 2][y] == "P" || tablero[x - 2][y] == "R" || tablero[x - 2][y] == "B" || tablero[x - 2][y] == "N" || tablero[x - 2][y] == "Q" || tablero[x - 2][y] == "K" || tablero[x - 2][y] == "p" || tablero[x - 2][y] == "r" || tablero[x - 2][y] == "b" || tablero[x - 2][y] == "n" || tablero[x - 2][y] == "q" || tablero[x - 2][y] == "k")
+            {
+                if (y != y2)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else if (tablero[x - 2][y] == " " || tablero[x - 2][y] == " " || tablero[x - 2][y] == " " || tablero[x - 2][y] == " " || tablero[x - 2][y] == " " || tablero[x - 2][y] == " " || tablero[x - 2][y] == " " || tablero[x - 2][y] == " " || tablero[x - 2][y] == " " || tablero[x - 2][y] == " " || tablero[x - 2][y] == " " || tablero[x - 2][y] == " ")
+            {
+                if (y != y2)
+                {
+                    if (tablero[x - 1][y + 1] == "p" || tablero[x - 1][y + 1] == "r" || tablero[x - 1][y + 1] == "b" || tablero[x - 1][y + 1] == "n" || tablero[x - 1][y + 1] == "q" || tablero[x - 1][y + 1] == "k")
+                    {
+                        if (tablero[x - 2][y + 2] == " " || tablero[x - 2][y + 2] == " " || tablero[x - 2][y + 2] == " " || tablero[x - 2][y + 2] == " " || tablero[x - 2][y + 2] == " " || tablero[x - 2][y + 2] == " ")
+                        {
+                            if ((y2 == (y + 2)) && (x2 == (x - 2)))
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                    else if (tablero[x + 1][y - 1] == "p" || tablero[x + 1][y - 1] == "r" || tablero[x + 1][y - 1] == "b" || tablero[x + 1][y - 1] == "n" || tablero[x + 1][y - 1] == "q" || tablero[x + 1][y - 1] == "k")
+                    {
+                        if (tablero[x + 2][y - 2] == " " || tablero[x + 2][y - 2] == " " || tablero[x + 2][y - 2] == " " || tablero[x + 2][y - 2] == " " || tablero[x + 2][y - 2] == " " || tablero[x + 2][y - 2] == " ")
+                        {
+                            if (((y2 == (y - 2)) && (x2 == (x + 2))))
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                    else if (((y2 == y - 2) && (x2 == x + 2)) && ((y2 == y + 2) && (x2 == x - 2)))
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return true;
+                }
+                return valido;
+            }
+            else if (tablero[x - 1][y] == " " || tablero[x - 1][y] == " " || tablero[x - 1][y] == " " || tablero[x - 1][y] == " " || tablero[x - 1][y] == " " || tablero[x - 1][y] == " " || tablero[x - 1][y] == " " || tablero[x - 1][y] == " " || tablero[x - 1][y] == " " || tablero[x - 1][y] == " " || tablero[x - 1][y] == " " || tablero[x - 1][y] == " ")
+            {
+                return valido;
+            }
+            return valido;
+        }
+        else if (pieza == "p")
+        {
+            if (tablero[x + 1][y] == "P" || tablero[x + 1][y] == "R" || tablero[x + 1][y] == "B" || tablero[x + 1][y] == "N" || tablero[x + 1][y] == "Q" || tablero[x + 1][y] == "K" || tablero[x + 1][y] == "p" || tablero[x + 1][y] == "r" || tablero[x + 1][y] == "b" || tablero[x + 1][y] == "n" || tablero[x + 1][y] == "q" || tablero[x + 1][y] == "k")
+            {
+                return false;
+            }
+
+            else if (tablero[x + 2][y] == "P" || tablero[x + 2][y] == "R" || tablero[x + 2][y] == "B" || tablero[x + 2][y] == "N" || tablero[x + 2][y] == "Q" || tablero[x + 2][y] == "K" || tablero[x + 2][y] == "p" || tablero[x + 2][y] == "r" || tablero[x + 2][y] == "b" || tablero[x + 2][y] == "n" || tablero[x + 2][y] == "q" || tablero[x + 2][y] == "k")
+            {
+                if (y != y2)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else if (tablero[x + 2][y] == " " || tablero[x + 2][y] == " " || tablero[x + 2][y] == " " || tablero[x + 2][y] == " " || tablero[x + 2][y] == " " || tablero[x + 2][y] == " " || tablero[x + 2][y] == " " || tablero[x + 2][y] == " " || tablero[x + 2][y] == " " || tablero[x + 2][y] == " " || tablero[x + 2][y] == " " || tablero[x + 2][y] == " ")
+            {
+                if (y != y2)
+                {
+                    if (tablero[x + 1][y - 1] == "p" || tablero[x + 1][y - 1] == "r" || tablero[x + 1][y - 1] == "b" || tablero[x + 1][y - 1] == "n" || tablero[x + 1][y - 1] == "q" || tablero[x + 1][y - 1] == "k")
+                    {
+                        if (tablero[x + 2][y - 2] == " " || tablero[x + 2][y - 2] == " " || tablero[x + 2][y - 2] == " " || tablero[x + 2][y - 2] == " " || tablero[x + 2][y - 2] == " " || tablero[x + 2][y - 2] == " ")
+                        {
+                            if ((y2 == (y - 2)) && (x2 == (x + 2)))
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                    else if (tablero[x - 1][y + 1] == "p" || tablero[x - 1][y + 1] == "r" || tablero[x - 1][y + 1] == "b" || tablero[x - 1][y + 1] == "n" || tablero[x - 1][y + 1] == "q" || tablero[x - 1][y + 1] == "k")
+                    {
+                        if (tablero[x - 2][y + 2] == " " || tablero[x - 2][y + 2] == " " || tablero[x - 2][y + 2] == " " || tablero[x - 2][y + 2] == " " || tablero[x - 2][y + 2] == " " || tablero[x - 2][y + 2] == " ")
+                        {
+                            if (((y2 == (y + 2)) && (x2 == (x - 2))))
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                    else if (((y2 == y + 2) && (x2 == x - 2)) && ((y2 == y - 2) && (x2 == x + 2)))
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return true;
+                }
+                return valido;
+            }
+            return valido;
+        }
+    }
 };
 #endif
