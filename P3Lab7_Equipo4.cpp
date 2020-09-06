@@ -198,7 +198,7 @@ int main(){
                         } else {
                             Rey rey;
                             movValido = rey.validarmovimiento(letraPieza, x1, y1, x2, y2, tablero);
-                        } // Fin If    
+                        } // Fin If
                         if (movValido==true){
                             tablero = MovimientoValido(tablero, x1, y1, x2, y2, letraPieza);
                         } else {
