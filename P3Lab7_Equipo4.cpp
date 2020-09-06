@@ -105,11 +105,8 @@ int main(){
                         string letraPieza, dondeEstoy, dondeVoy;
                         int x1, y1, x2, y2;
                         letraPieza = comando.substr(0,1);
-                        cout << "lP" << letraPieza << endl;
                         dondeEstoy = comando.substr(2, 2);
                         dondeVoy = comando.substr(5, 2);
-                        cout << "Donde Estoy: " << dondeEstoy << endl;
-                        cout << "Donde Voy: " << dondeVoy << endl;
                         // Posicion en la que está la pieza Y
                         if (dondeEstoy[0] == 'a'){
                             y1 = 0;
@@ -182,7 +179,6 @@ int main(){
                         } else {
                             x2 = 0;    
                         } // Fin If
-                        cout << "x1: " << x1 << " y1: " << y1 << " x2: " << x2 << " y2: " << y2 << endl;
                         bool movValido; 
                         if (letraPieza == "P"){
                             Peon peon;
@@ -326,7 +322,6 @@ int main(){
                         } else {
                             x2 = 0;    
                         } // Fin If
-                        cout << "x1: " << x1 << " y1: " << y1 << " x2: " << x2 << " y2: " << y2;
                         bool movValido;                        
                         if (letraPieza == "p"){
                             Peon peon;

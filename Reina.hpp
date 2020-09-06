@@ -70,65 +70,113 @@ class Reina : public Pieza{
                         return true; 
                     } // Fin If
                 } else {
-                    int difX, difY;
-                    difX = x2 - x1;
-                    difY = y2 - y1;
-                    if(difX < 0 && difY < 0){
-                        // Movimiento Diagonal hacia arriba y a la izquierda
-                        int numy, numx;
-                        numy = y1; 
-                        numx = x1;                       
-                        difY = difY * -1;
-                        difX = difX * -1;
-                        for (int i = 0; i < difY - 1; i++){
+                    // Verificacion que el punto x2,y2 este en las diagonales del punto x1,y1
+                    bool diagvalid;
+                    diagvalid = false;
+                    int numy, numx;
+                    // Evaluacion de la diagonal hacia arriba y a la izquierda 
+                    numy = y1; 
+                    numx = x1;
+                    for (int i = 0; i < 7; i++){
                             numy--;
                             numx--;
-                            if (tablero[numx][numy] != " "){
-                                return false;
-                            } // Fin If                    
-                        } // Fin For
-                        return true;                       
-                    } else if (difX < 0 && difY > 0){
-                        // Movimiento Diagonal hacia arriba y a la derecha
-                        int numy, numx;
-                        numy = y1; 
-                        numx = x1;                       
-                        difX = difX * -1;
-                        for (int i = 0; i < difY - 1; i++){
+                        if (numx == x2 && numy == y2){
+                            diagvalid = true;
+                        } // Fin If                       
+                    } // Fin For
+                    // Evaluacion de la diagonal hacia arriba y a la derecha
+                    numy = y1; 
+                    numx = x1;
+                    for (int i = 0; i < 7; i++){
                             numy++;
                             numx--;
-                            if (tablero[numx][numy] != " "){
-                                return false;
-                            } // Fin If                    
-                        } // Fin For
-                        return true; 
-                    } else if (difX > 0 && difY < 0){
-                        // Movimiento Diagonal hacia abajo y a la izquierda 
-                        int numy, numx;
-                        numy = y1; 
-                        numx = x1;                       
-                        difY = difY * -1;
-                        for (int i = 0; i < difY - 1; i++){
+                        if (numx == x2 && numy == y2){
+                            diagvalid = true;
+                        } // Fin If                       
+                    } // Fin For
+                    // Evaluacion de la diagonal hacia abajo y a la izquierda
+                    numy = y1; 
+                    numx = x1;
+                    for (int i = 0; i < 7; i++){
                             numy--;
                             numx++;
-                            if (tablero[numx][numy] != " "){
-                                return false;
-                            } // Fin If                    
-                        } // Fin For
-                        return true; 
-                    } else if (difX > 0 && difY > 0){
-                        // Movimiento Diagonal hacia abajo y a la derecha
-                        int numy, numx;
-                        numy = y1; 
-                        numx = x1;                       
-                        for (int i = 0; i < difY - 1; i++){
+                        if (numx == x2 && numy == y2){
+                            diagvalid = true;
+                        } // Fin If                       
+                    } // Fin For    
+                    // Evaluacion de la diagonal hacia abajo y a la derecha
+                    numy = y1; 
+                    numx = x1;
+                    for (int i = 0; i < 7; i++){
                             numy++;
                             numx++;
-                            if (tablero[numx][numy] != " "){
-                                return false;
-                            } // Fin If                    
-                        } // Fin For
-                        return true; 
+                        if (numx == x2 && numy == y2){
+                            diagvalid = true;
+                        } // Fin If                       
+                    } // Fin For                              
+                    if (diagvalid == true){
+                        int difX, difY;
+                        difX = x2 - x1;
+                        difY = y2 - y1;
+                        if(difX < 0 && difY < 0){
+                            // Movimiento Diagonal hacia arriba y a la izquierda
+                            int numy, numx;
+                            numy = y1; 
+                            numx = x1;                       
+                            difY = difY * -1;
+                            difX = difX * -1;
+                            for (int i = 0; i < difY - 1; i++){
+                                numy--;
+                                numx--;
+                                if (tablero[numx][numy] != " "){
+                                    return false;
+                                } // Fin If                    
+                            } // Fin For
+                            return true;                       
+                        } else if (difX < 0 && difY > 0){
+                            // Movimiento Diagonal hacia arriba y a la derecha
+                            int numy, numx;
+                            numy = y1; 
+                            numx = x1;                       
+                            difX = difX * -1;
+                            for (int i = 0; i < difY - 1; i++){
+                                numy++;
+                                numx--;
+                                if (tablero[numx][numy] != " "){
+                                    return false;
+                                } // Fin If                    
+                            } // Fin For
+                            return true; 
+                        } else if (difX > 0 && difY < 0){
+                            // Movimiento Diagonal hacia abajo y a la izquierda 
+                            int numy, numx;
+                            numy = y1; 
+                            numx = x1;                       
+                            difY = difY * -1;
+                            for (int i = 0; i < difY - 1; i++){
+                                numy--;
+                                numx++;
+                                if (tablero[numx][numy] != " "){
+                                    return false;
+                                } // Fin If                    
+                            } // Fin For
+                            return true; 
+                        } else if (difX > 0 && difY > 0){
+                            // Movimiento Diagonal hacia abajo y a la derecha
+                            int numy, numx;
+                            numy = y1; 
+                            numx = x1;                       
+                            for (int i = 0; i < difY - 1; i++){
+                                numy++;
+                                numx++;
+                                if (tablero[numx][numy] != " "){
+                                    return false;
+                                } // Fin If                    
+                            } // Fin For
+                            return true; 
+                        } else {
+                            return false;
+                        } // Fin If
                     } else {
                         return false;
                     } // Fin If
@@ -200,7 +248,115 @@ class Reina : public Pieza{
                         return true; 
                     } // Fin If
                 } else {
-                    // Aqui va lo de los diagonales
+                    // Verificacion que el punto x2,y2 este en las diagonales del punto x1,y1
+                    bool diagvalid = false;
+                    int numy, numx;
+                    // Evaluacion de la diagonal hacia arriba y a la izquierda 
+                    numy = y1; 
+                    numx = x1;
+                    for (int i = 0; i < 7; i++){
+                            numy--;
+                            numx--;
+                        if (numx == x2 && numy == y2){
+                            diagvalid = true;
+                        } // Fin If                       
+                    } // Fin For
+                    // Evaluacion de la diagonal hacia arriba y a la derecha
+                    numy = y1; 
+                    numx = x1;
+                    for (int i = 0; i < 7; i++){
+                            numy++;
+                            numx--;
+                        if (numx == x2 && numy == y2){
+                            diagvalid = true;
+                        } // Fin If                       
+                    } // Fin For
+                    // Evaluacion de la diagonal hacia abajo y a la izquierda
+                    numy = y1; 
+                    numx = x1;
+                    for (int i = 0; i < 7; i++){
+                            numy--;
+                            numx++;
+                        if (numx == x2 && numy == y2){
+                            diagvalid = true;
+                        } // Fin If                       
+                    } // Fin For    
+                    // Evaluacion de la diagonal hacia abajo y a la derecha
+                    numy = y1; 
+                    numx = x1;
+                    for (int i = 0; i < 7; i++){
+                            numy++;
+                            numx++;
+                        if (numx == x2 && numy == y2){
+                            diagvalid = true;
+                        } // Fin If                       
+                    } // Fin For                              
+                    if (diagvalid == true){
+                        int difX, difY;
+                        difX = x2 - x1;
+                        difY = y2 - y1;
+                        if(difX < 0 && difY < 0){
+                            // Movimiento Diagonal hacia arriba y a la izquierda
+                            int numy, numx;
+                            numy = y1; 
+                            numx = x1;                       
+                            difY = difY * -1;
+                            difX = difX * -1;
+                            for (int i = 0; i < difY - 1; i++){
+                                numy--;
+                                numx--;
+                                if (tablero[numx][numy] != " "){
+                                    return false;
+                                } // Fin If                    
+                            } // Fin For
+                            return true;                       
+                        } else if (difX < 0 && difY > 0){
+                            // Movimiento Diagonal hacia arriba y a la derecha
+                            int numy, numx;
+                            numy = y1; 
+                            numx = x1;                       
+                            difX = difX * -1;
+                            for (int i = 0; i < difY - 1; i++){
+                                numy++;
+                                numx--;
+                                if (tablero[numx][numy] != " "){
+                                    return false;
+                                } // Fin If                    
+                            } // Fin For
+                            return true; 
+                        } else if (difX > 0 && difY < 0){
+                            // Movimiento Diagonal hacia abajo y a la izquierda 
+                            int numy, numx;
+                            numy = y1; 
+                            numx = x1;                       
+                            difY = difY * -1;
+                            for (int i = 0; i < difY - 1; i++){
+                                numy--;
+                                numx++;
+                                if (tablero[numx][numy] != " "){
+                                    return false;
+                                } // Fin If                    
+                            } // Fin For
+                            return true; 
+                        } else if (difX > 0 && difY > 0){
+                            // Movimiento Diagonal hacia abajo y a la derecha
+                            int numy, numx;
+                            numy = y1; 
+                            numx = x1;                       
+                            for (int i = 0; i < difY - 1; i++){
+                                numy++;
+                                numx++;
+                                if (tablero[numx][numy] != " "){
+                                    return false;
+                                } // Fin If                    
+                            } // Fin For
+                            return true; 
+                        } else {
+                            return false;
+                        } // Fin If
+                    } else {
+                        return false;
+                    } // Fin If
                 } // Fin If
             } // Fin If
         } // Fin If Jugador     
